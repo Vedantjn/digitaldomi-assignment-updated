@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { motion } from 'framer-motion';
 import AddressInput from './components/AddressInput';
 import Map from './components/Map';
 import NFTGenerator from './components/NFTGenerator';
-import GlobalStyles, {darkTheme} from './styles/GlobalStyles';
+import GlobalStyles, { darkTheme } from './styles/GlobalStyles';
+import AnimatedTitle from './components/AnimatedTitle';
 
 const AppWrapper = styled.div`
   max-width: 800px;
@@ -13,11 +13,6 @@ const AppWrapper = styled.div`
   background-color: ${props => props.theme.background};
   color: ${props => props.theme.text};
   min-height: 100vh;
-`;
-
-const Title = styled(motion.h1)`
-  text-align: center;
-  color: ${props => props.theme.title};
 `;
 
 const ContentWrapper = styled.div`
@@ -43,13 +38,7 @@ const App = () => {
     <ThemeProvider theme={darkTheme}>
       <AppWrapper>
         <GlobalStyles />
-        <Title
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Address NFT Generator
-        </Title>
+        <AnimatedTitle text="Address NFT Generator" />
         <ContentWrapper>
           <InputWrapper>
             <AddressInput setSelected={setSelected} />

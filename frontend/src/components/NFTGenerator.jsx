@@ -3,6 +3,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import NFTAnimation from './NFTAnimation';
+import AnimatedTitle from './AnimatedTitle';
+
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -40,14 +42,6 @@ const NFTDisplay = styled(motion.div)`
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   border: 1px solid ${props => props.theme.cardBorder};
-`;
-
-const NFTTitle = styled.h3`
-  font-size: 28px;
-  margin-bottom: 24px;
-  color: ${props => props.theme.accent};
-  text-transform: uppercase;
-  letter-spacing: 1px;
 `;
 
 const NFTInfoGrid = styled.div`
@@ -145,11 +139,11 @@ const NFTGenerator = ({ selected }) => {
       </GenerateButton>
       {nftToken && (
         <NFTDisplay
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <NFTTitle>NFT Generated!</NFTTitle>
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <AnimatedTitle text="NFT Generated!" />
           <NFTAnimation />
           <NFTInfoGrid>
             <NFTInfoItem>
