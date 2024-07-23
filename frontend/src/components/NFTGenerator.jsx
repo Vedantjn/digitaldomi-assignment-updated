@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { API_URL } from '../config';
+import NFTAnimation from './NFTAnimation';
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 const NFTGeneratorWrapper = styled(motion.div)`
   margin-top: 20px;
@@ -148,6 +150,7 @@ const NFTGenerator = ({ selected }) => {
           transition={{ duration: 0.5 }}
         >
           <NFTTitle>NFT Generated!</NFTTitle>
+          <NFTAnimation />
           <NFTInfoGrid>
             <NFTInfoItem>
               <NFTInfoLabel>Transaction Hash</NFTInfoLabel>

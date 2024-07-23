@@ -59,7 +59,51 @@ const GlobalStyles = createGlobalStyle`
   .mapboxgl-ctrl-attrib-inner {
     display: none;
   }
+
+  /* 3D Animation Styles */
+  canvas {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    image-rendering: optimize-contrast;
+  }
+
+  .nft-animation-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .nft-animation-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, ${props => props.theme.card});
+    pointer-events: none;
+  }
+
+  /* Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${props => props.theme.background};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.accent};
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${props => props.theme.buttonHover};
+  }
 `;
 
 export default GlobalStyles;
-
