@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-
-const API_URL = process.env.REACT_APP_API_URL;
+import { API_URL } from '../config';
 
 const NFTGeneratorWrapper = styled(motion.div)`
   margin-top: 20px;
