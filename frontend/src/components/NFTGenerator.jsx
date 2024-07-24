@@ -94,7 +94,7 @@ const NFTGenerator = ({ selected }) => {
   
     setIsLoading(true);
   
-    try {
+    try { 
       const { tokenId, owner, transactionHash } = await mintNFT(selected.address, selected.lat, selected.lng);
   
       setNftToken({
