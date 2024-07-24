@@ -6,8 +6,6 @@ import NFTAnimation from './NFTAnimation';
 import AnimatedTitle from './AnimatedTitle';
 import { mintNFT } from '../utils/api';
 
-
-
 const API_URL = process.env.REACT_APP_API_URL;
 
 const NFTGeneratorWrapper = styled(motion.div)`
