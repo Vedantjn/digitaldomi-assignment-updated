@@ -26,7 +26,8 @@ const Map = ({ selected }) => {
         style: 'mapbox://styles/mapbox/dark-v10',
         center: [0, 0],
         zoom: 2,
-        fadeDuration: 1000
+        fadeDuration: 1000,
+        trackUsage: false
       });
 
       mapRef.current.on('load', () => {

@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import NFTAnimation from './NFTAnimation';
 import AnimatedTitle from './AnimatedTitle';
+import { mintNFT } from '../utils/api';
+
 
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -95,13 +97,7 @@ const NFTGenerator = ({ selected }) => {
     setIsLoading(true);
   
     try {
-      const response = await axios.post(`${API_URL}/api/mint-nft`, {
-        address: selected.address,
-        lat: selected.lat,
-        lng: selected.lng
-      });
-  
-      const { tokenId, owner, transactionHash } = response.data;
+      const { tokenId, owner, transactionHash } = await mintNFT(selected.address, selected.lat, selected.lng);
   
       setNftToken({
         tokenId,
@@ -113,15 +109,12 @@ const NFTGenerator = ({ selected }) => {
       });
     } catch (error) {
       console.error('Error generating NFT:', error);
-      if (error.response && error.response.data && error.response.data.details) {
-        alert(`Error generating NFT: ${error.response.data.details}`);
-      } else {
-        alert('Error generating NFT. Please try again later.');
-      }
+      alert('Error generating NFT. Please try again later.');
     } finally {
       setIsLoading(false);
     }
   };
+
 
   return (
     <NFTGeneratorWrapper
