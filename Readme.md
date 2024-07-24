@@ -4,16 +4,19 @@ A React application that generates NFTs based on address input. We don't want to
 
 Here are some screenshots of the application:
 
-![Home Page](./frontend/public/public/screenshot1.png)
+
+![Demo](./frontend/public/Digital-Domi-Assignment-Demo.webm)
+
+![Home Page](./frontend/public/screenshot1.png)
 *Home page of the Address NFT Generator*
 
-![Map View](./frontend/public/public/screenshot2.png)
+![Map View](./frontend/public/screenshot2.png)
 *Map view after entering an address*
 
-![NFT Generation](./frontend/public/public/screenshot4.png)
+![NFT Generation](./frontend/public/screenshot4.png)
 *NFT generation process*
 
-![Etherscan](./frontend/public/public/screenshot5.png)
+![Etherscan](./frontend/public/screenshot5.png)
 *Etherscan*
 
 
